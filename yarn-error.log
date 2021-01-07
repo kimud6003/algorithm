@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/Cellar/node/14.5.0/bin/node /usr/local/bin/yarn test
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.5.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/kud/Desktop/Study/algorithm/package.json: Unexpected token } in JSON at position 243
+      at JSON.parse (<anonymous>)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:321:13
+
+npm manifest: 
+  {
+    "name": "algorithm",
+    "version": "1.0.0",
+    "main": "index.js",
+    "repository": "https://github.com/kimud6003/algorithm.git",
+    "author": "kimudnong <kimud6003@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+      "test": "node test.js"
+  },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

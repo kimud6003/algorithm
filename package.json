@@ -1,0 +1,11 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/kimud6003/algorithm.git",
+  "author": "kimudnong <kimud6003@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test.js"
+  }
+}
