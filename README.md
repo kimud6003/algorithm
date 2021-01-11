@@ -168,3 +168,72 @@ function solution(bridge_length, weight, truck_weights) {
 }
 
 ```
+
+## 정렬
+
+- 가장 큰수 
+
+> 0 또는 양의 정수가 주어졌을 때, 정수를 이어 붙여 만들 수 있는 가장 큰 수를 알아내 주세요.
+> 예를 들어, 주어진 정수가 [6, 10, 2]라면 [6102, 6210, 1062, 1026, 2610, 2106]를 만들 수 있고, 이중 가장 큰 수는 6210입니다.
+> 0 또는 양의 정수가 담긴 배열 numbers가 매개변수로 주어질 때, 순서를 재배치하여 만들 수 있는 가장 큰 수를 문자열로 바꾸어 return 하도록 solution 함수를 작성해주세요.
+
+- 제한 사항
+
+- numbers의 길이는 1 이상 100,000 이하입니다.
+- numbers의 원소는 0 이상 1,000 이하입니다.
+- 정답이 너무 클 수 있으니 문자열로 바꾸어 return 합니다.
+
+
+```js
+function solution(numbers) {
+    var answer = "";
+    var tmp = numbers.sort(compare);
+
+    for(let i = numbers.length-1; i>-1; i--){
+       answer += tmp[i];
+    }
+  
+    return answer.replace(/^0+/, "0");
+}
+
+function compare(a,b){
+    if(b.toString()+a.toString()>a.toString()+b.toString())
+        return -1;
+}
+```
+
+- k번째수
+
+> 배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.
+> 예를 들어 array가 [1, 5, 2, 6, 3, 7, 4], i = 2, j = 5, k = 3이라면
+> array의 2번째부터 5번째까지 자르면 [5, 2, 6, 3]입니다.
+> 1에서 나온 배열을 정렬하면 [2, 3, 5, 6]입니다.
+> 2에서 나온 배열의 3번째 숫자는 5입니다.
+
+- 제한 사항
+
+- array의 길이는 1 이상 100 이하입니다.
+- array의 각 원소는 1 이상 100 이하입니다.
+- commands의 길이는 1 이상 50 이하입니다.
+- commands의 각 원소는 길이가 3입니다.
+
+```js
+
+function solution(array, commands) {
+    var answer=[];
+    for(let i = 0; i<commands.length; i++){
+        let tmp = array.slice(commands[i][0]-1,commands[i][1]);
+        tmp.sort(compare);
+        answer.push(tmp[commands[i][2]-1])
+        
+    }
+    return answer;
+}
+
+function compare(a, b) {
+  if (a > b) return 1; // 첫 번째 값이 두 번째 값보다 큰 경우
+  if (a == b) return 0; // 두 값이 같은 경우
+  if (a < b) return -1; //  첫 번째 값이 두 번째 값보다 작은 경우
+}
+
+```
